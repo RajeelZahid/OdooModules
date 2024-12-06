@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="project.example.custom1">
+      Prioritize your tasks by marking important ones using the <a style="color: gold;" class="fa fa-star"></a> button.
+      <br/><br/>
+      Use the <span class="o_status d-inline-block o_status_green"></span> state to inform your colleagues that a task is approved for the next stage. 
+      <br/>
+      Use the <span class="o_status d-inline-block bg-warning"></span> state to indicate a request for changes or a need for discussion on a task.
+      <br/><br/>
+      Use the <span class="fa fa-check-circle text-success d-inline-block"></span> state to mark the task as complete.
+      <br/>
+      Use the <span class="fa fa-times-circle text-danger d-inline-block"></span> state to mark the task as cancelled.
+      <br/><br/>
+      Look for the <span class="fa fa-hourglass-o d-inline-block"></span> icon to see tasks waiting on other ones. Once a task is marked as complete or cancelled, all of its dependencies will be unblocked.
+      <br/><br/>
+      Use the <a class="fa fa-clock-o"></a> icon to organize your daily activities.
+    </t>
+
+</templates>

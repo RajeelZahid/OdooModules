@@ -13,7 +13,9 @@
         'project'
     ],
     'data': [
-
+        'security/ir.model.access.csv',
+        'data/task_kanban_example.xml',
+        'views/task_kanban_example.xml',
     ],
     'demo': [
 

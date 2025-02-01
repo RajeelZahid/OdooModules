@@ -1,38 +1,40 @@
 /** @odoo-module **/
 
-import { _t } from "@web/core/l10n/translation";
-import { registry } from "@web/core/registry";
-import { renderToMarkup } from '@web/core/utils/render';
-import { markup } from "@odoo/owl";
+import {_t} from "@web/core/l10n/translation";
+import {registry} from "@web/core/registry";
+import {markup} from "@odoo/owl";
+import {ORM} from "@web/core/orm_service";
 
+const orm = new ORM
 const greenBullet = markup(`<span class="o_status d-inline-block o_status_green"></span>`);
 const orangeBullet = markup(`<span class="o_status d-inline-block text-warning"></span>`);
 const star = markup(`<a style="color: gold;" class="fa fa-star"></a>`);
 const clock = markup(`<a class="fa fa-clock-o"></a>`);
 
-const exampleData = registry
-            .category("kanban_examples")
-            .get('project', null);
+const exampleData = registry.category("kanban_examples").get('project', null);
 
-exampleData.examples.push(
-    {
-        name: _t('Custom #1'),
-        columns: [_t('New'), _t('Analyzing'), _t('In Progress'), _t('Done')],
-        foldedColumns: [_t('Cancelled')],
+async function getTaskKanbanExamplesData() {
+    return await orm.call("project.task.kanban.example", "get_examples", [[]]);
+}
+
+async function initTaskKanbanExamples() {
+
+    var kanban_examples = await getTaskKanbanExamplesData()
+    exampleData.examples = kanban_examples.map(item => ({
+        name: item.name,
+        columns: item.stages,
+        foldedColumns: item.folded_stages,
         get description() {
-            return renderToMarkup("project.example.custom1");
+            var description = item.description + "<br><br>" +
+                "Stages: " + item.stages.join(', ') + "<br>" +
+                "Folded: " + item.folded_stages.join(', ')
+                // + "<br><br>" +
+                // "Sequence: " + item.all_stages.join(' -> ') + "<br>"
+            return markup(description);
         },
         bullets: [greenBullet, orangeBullet, star, clock],
-    },{
-        name: _t('Custom #2'),
-        columns: [_t('New'), _t('Checking'), _t('Testing'), _t('Done')],
-        foldedColumns: [_t('Rejected')],
-        get description() {
-            return renderToMarkup("project.example.custom1");
-        },
-        bullets: [greenBullet, orangeBullet, star, clock],
-    },
-)
+    }));
 
-registry.category("kanban_examples").remove('project');
-registry.category("kanban_examples").add('project', exampleData);
+}
+
+initTaskKanbanExamples()

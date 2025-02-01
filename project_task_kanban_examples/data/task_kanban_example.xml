@@ -1,0 +1,250 @@
+<odoo>
+
+    <data noupdate="1">
+        <record id="project_task_kanban_example_1" model="project.task.kanban.example">
+            <field name="sequence" eval="1"/>
+            <field name="name">Software Development</field>
+            <field name="description">
+            Prioritize your tasks by marking important ones using the &lt;a style="color: gold;" class="fa fa-star"&gt;&lt;/a&gt; button.
+            &lt;br/&gt;&lt;br/&gt;
+            Use the &lt;span class="o_status d-inline-block o_status_green"&gt;&lt;/span&gt; state to inform your colleagues that a task is approved for the next stage.
+            &lt;br/&gt;
+            Use the &lt;span class="o_status d-inline-block bg-warning"&gt;&lt;/span&gt; state to indicate a request for changes or a need for discussion on a task.
+            &lt;br/&gt;&lt;br/&gt;
+            Use the &lt;span class="fa fa-check-circle text-success d-inline-block"&gt;&lt;/span&gt; state to mark the task as complete.
+            &lt;br/&gt;
+            Use the &lt;span class="fa fa-times-circle text-danger d-inline-block"&gt;&lt;/span&gt; state to mark the task as cancelled.
+            &lt;br/&gt;&lt;br/&gt;
+            Look for the &lt;span class="fa fa-hourglass-o d-inline-block"&gt;&lt;/span&gt; icon to see tasks waiting on other ones. Once a task is marked as complete or cancelled, all of its dependencies will be unblocked.
+            &lt;br/&gt;&lt;br/&gt;
+            Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
+            &lt;/t'</field>
+            <field name="stage_ids" eval="[
+              (0, 0, {'sequence': 1, 'name': 'Backlog', 'folded': False}),
+              (0, 0, {'sequence': 2, 'name': 'Specifications', 'folded': False}),
+              (0, 0, {'sequence': 3, 'name': 'Development', 'folded': False}),
+              (0, 0, {'sequence': 4, 'name': 'Tests', 'folded': False}),
+              (0, 0, {'sequence': 5, 'name': 'Delivered', 'folded': True})
+    ]"/>
+        </record>
+
+        <record id="project_task_kanban_example_2" model="project.task.kanban.example">
+            <field name="sequence" eval="2"/>
+            <field name="name">Agile Scrum</field>
+            <field name="description">
+            Use the &lt;span class="o_status d-inline-block o_status_green"&gt;&lt;/span&gt; state to inform your colleagues that a task is approved for the next stage.
+            &lt;br/&gt;
+            Use the &lt;span class="o_status d-inline-block bg-warning"&gt;&lt;/span&gt; state to indicate a request for changes or a need for discussion on a task.
+            &lt;br/&gt;&lt;br/&gt;
+            Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
+            &lt;br/&gt;&lt;br/&gt;
+            &lt;a class="fa fa-lightbulb-o"&gt;&lt;/a&gt; Sort your tasks by sprint using milestones, tags, or a dedicated property. At the end of each sprint, just pick the remaining tasks in your list and move them all at once to the next sprint by editing the milestone, tag, or property.
+            &lt;/t'</field>
+            <field name="stage_ids" eval="[
+              (0, 0, {'sequence': 1, 'name': 'Backlog', 'folded': False}),
+              (0, 0, {'sequence': 2, 'name': 'Sprint Backlog', 'folded': False}),
+              (0, 0, {'sequence': 3, 'name': 'Sprint in Progress', 'folded': False}),
+              (0, 0, {'sequence': 4, 'name': 'Sprint Complete', 'folded': True}),
+              (0, 0, {'sequence': 5, 'name': 'Old Completed Sprint', 'folded': True})
+    ]"/>
+        </record>
+
+        <record id="project_task_kanban_example_3" model="project.task.kanban.example">
+            <field name="sequence" eval="3"/>
+            <field name="name">Digital Marketing</field>
+            <field name="description">
+            Everyone can propose ideas, and the Editor marks the best ones as &lt;span class="o_status d-inline-block o_status_green"&gt;&lt;/span&gt;.&lt;br/&gt;
+            Attach all documents or links to the task directly, to have all research information centralized.
+            &lt;br/&gt;
+            Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
+            &lt;/t'</field>
+            <field name="stage_ids" eval="[
+              (0, 0, {'sequence': 1, 'name': 'Ideas', 'folded': False}),
+              (0, 0, {'sequence': 2, 'name': 'Researching', 'folded': False}),
+              (0, 0, {'sequence': 3, 'name': 'Writing', 'folded': False}),
+              (0, 0, {'sequence': 4, 'name': 'Editing', 'folded': False}),
+              (0, 0, {'sequence': 5, 'name': 'Done', 'folded': True})
+    ]"/>
+        </record>
+
+        <record id="project_task_kanban_example_4" model="project.task.kanban.example">
+            <field name="sequence" eval="4"/>
+            <field name="name">Customer Feedback</field>
+            <field name="description">
+            Customers propose feedbacks by email; Odoo creates tasks automatically, and you can
+            communicate on the task directly. &lt;br/&gt;Your managers decide which feedback is accepted
+            &lt;span class="o_status d-inline-block o_status_green"&gt;&lt;/span&gt; and which feedback is
+            moved to the "Refused" column.
+            &lt;br/&gt;
+            Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
+            &lt;/t'</field>
+            <field name="stage_ids" eval="[
+              (0, 0, {'sequence': 1, 'name': 'New', 'folded': False}),
+              (0, 0, {'sequence': 2, 'name': 'In development', 'folded': False}),
+              (0, 0, {'sequence': 3, 'name': 'Done', 'folded': True}),
+              (0, 0, {'sequence': 4, 'name': 'Refused', 'folded': True})
+    ]"/>
+        </record>
+
+        <record id="project_task_kanban_example_5" model="project.task.kanban.example">
+            <field name="sequence" eval="5"/>
+            <field name="name">Consulting</field>
+            <field name="description">
+            Manage the lifecycle of your project using the kanban view. Add newly acquired projects,
+            assign them and use the &lt;span class="o_status d-inline-block o_status_green"&gt;&lt;/span&gt; and
+            &lt;span class="o_status d-inline-block bg-warning"&gt;&lt;/span&gt; to define if the project is
+            ready for the next step.
+            &lt;br/&gt;
+            Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
+            &lt;/t'</field>
+            <field name="stage_ids" eval="[
+              (0, 0, {'sequence': 1, 'name': 'New Projects', 'folded': False}),
+              (0, 0, {'sequence': 2, 'name': 'Resources Allocation', 'folded': False}),
+              (0, 0, {'sequence': 3, 'name': 'In Progress', 'folded': False}),
+              (0, 0, {'sequence': 4, 'name': 'Done', 'folded': True})
+    ]"/>
+        </record>
+
+        <record id="project_task_kanban_example_6" model="project.task.kanban.example">
+            <field name="sequence" eval="6"/>
+            <field name="name">Research Project</field>
+            <field name="description">
+            Handle your idea gathering within Tasks of your new Project and discuss them in the chatter of the tasks. &lt;br/&gt;Use the
+            &lt;span class="o_status d-inline-block o_status_green"&gt;&lt;/span&gt; and &lt;span class="o_status d-inline-block bg-warning"&gt;&lt;/span&gt;
+            to signalize what is the current status of your Idea.
+            &lt;br/&gt;
+            Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
+            &lt;/t'</field>
+            <field name="stage_ids" eval="[
+              (0, 0, {'sequence': 1, 'name': 'Brainstorm', 'folded': False}),
+              (0, 0, {'sequence': 2, 'name': 'Research', 'folded': False}),
+              (0, 0, {'sequence': 3, 'name': 'Draft', 'folded': False}),
+              (0, 0, {'sequence': 4, 'name': 'Final Document', 'folded': True})
+    ]"/>
+        </record>
+
+        <record id="project_task_kanban_example_7" model="project.task.kanban.example">
+            <field name="sequence" eval="7"/>
+            <field name="name">T-shirt Printing</field>
+            <field name="description">
+            Communicate with customers on the task using the email gateway. Attach logo designs to the task, so that information flows from
+            designers to the workers who print the t-shirt. &lt;br/&gt;Organize priorities amongst orders using the
+            &lt;a style="color: gold;" class="fa fa-star"&gt;&lt;/a&gt; icon.
+            &lt;br/&gt;
+            Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
+            &lt;/t'</field>
+            <field name="stage_ids" eval="[
+              (0, 0, {'sequence': 1, 'name': 'New Orders', 'folded': False}),
+              (0, 0, {'sequence': 2, 'name': 'Logo Design', 'folded': False}),
+              (0, 0, {'sequence': 3, 'name': 'To Print', 'folded': False}),
+              (0, 0, {'sequence': 4, 'name': 'Done', 'folded': True})
+    ]"/>
+        </record>
+
+        <record id="project_task_kanban_example_8" model="project.task.kanban.example">
+            <field name="sequence" eval="8"/>
+            <field name="name">Design</field>
+            <field name="description">
+            Prioritize your tasks by marking important ones using the &lt;a style="color: gold;" class="fa fa-star"&gt;&lt;/a&gt; button.
+            &lt;br/&gt;&lt;br/&gt;
+            Use the &lt;span class="o_status d-inline-block o_status_green"&gt;&lt;/span&gt; state to inform your colleagues that a task is approved for the next stage.
+            &lt;br/&gt;
+            Use the &lt;span class="o_status d-inline-block bg-warning"&gt;&lt;/span&gt; state to indicate a request for changes or a need for discussion on a task.
+            &lt;br/&gt;&lt;br/&gt;
+            Use the &lt;span class="fa fa-check-circle text-success d-inline-block"&gt;&lt;/span&gt; state to mark the task as complete.
+            &lt;br/&gt;
+            Use the &lt;span class="fa fa-times-circle text-danger d-inline-block"&gt;&lt;/span&gt; state to mark the task as cancelled.
+            &lt;br/&gt;&lt;br/&gt;
+            Look for the &lt;span class="fa fa-hourglass-o d-inline-block"&gt;&lt;/span&gt; icon to see tasks waiting on other ones. Once a task is marked as complete or cancelled, all of its dependencies will be unblocked.
+            &lt;br/&gt;&lt;br/&gt;
+            Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
+            &lt;/t'</field>
+            <field name="stage_ids" eval="[
+              (0, 0, {'sequence': 1, 'name': 'New Request', 'folded': False}),
+              (0, 0, {'sequence': 2, 'name': 'Design', 'folded': False}),
+              (0, 0, {'sequence': 3, 'name': 'Client Review', 'folded': False}),
+              (0, 0, {'sequence': 4, 'name': 'Handoff', 'folded': True})
+    ]"/>
+        </record>
+
+        <record id="project_task_kanban_example_9" model="project.task.kanban.example">
+            <field name="sequence" eval="9"/>
+            <field name="name">Publishing</field>
+            <field name="description">
+            Prioritize your tasks by marking important ones using the &lt;a style="color: gold;" class="fa fa-star"&gt;&lt;/a&gt; button.
+            &lt;br/&gt;&lt;br/&gt;
+            Use the &lt;span class="o_status d-inline-block o_status_green"&gt;&lt;/span&gt; state to inform your colleagues that a task is approved for the next stage.
+            &lt;br/&gt;
+            Use the &lt;span class="o_status d-inline-block bg-warning"&gt;&lt;/span&gt; state to indicate a request for changes or a need for discussion on a task.
+            &lt;br/&gt;&lt;br/&gt;
+            Use the &lt;span class="fa fa-check-circle text-success d-inline-block"&gt;&lt;/span&gt; state to mark the task as complete.
+            &lt;br/&gt;
+            Use the &lt;span class="fa fa-times-circle text-danger d-inline-block"&gt;&lt;/span&gt; state to mark the task as cancelled.
+            &lt;br/&gt;&lt;br/&gt;
+            Look for the &lt;span class="fa fa-hourglass-o d-inline-block"&gt;&lt;/span&gt; icon to see tasks waiting on other ones. Once a task is marked as complete or cancelled, all of its dependencies will be unblocked.
+            &lt;br/&gt;&lt;br/&gt;
+            Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
+            &lt;/t'</field>
+            <field name="stage_ids" eval="[
+              (0, 0, {'sequence': 1, 'name': 'Ideas', 'folded': False}),
+              (0, 0, {'sequence': 2, 'name': 'Writing', 'folded': False}),
+              (0, 0, {'sequence': 3, 'name': 'Editing', 'folded': False}),
+              (0, 0, {'sequence': 4, 'name': 'Published', 'folded': True})
+    ]"/>
+        </record>
+
+        <record id="project_task_kanban_example_10" model="project.task.kanban.example">
+            <field name="sequence" eval="10"/>
+            <field name="name">Manufacturing</field>
+            <field name="description">
+            Prioritize your tasks by marking important ones using the &lt;a style="color: gold;" class="fa fa-star"&gt;&lt;/a&gt; button.
+            &lt;br/&gt;&lt;br/&gt;
+            Use the &lt;span class="o_status d-inline-block o_status_green"&gt;&lt;/span&gt; state to inform your colleagues that a task is approved for the next stage.
+            &lt;br/&gt;
+            Use the &lt;span class="o_status d-inline-block bg-warning"&gt;&lt;/span&gt; state to indicate a request for changes or a need for discussion on a task.
+            &lt;br/&gt;&lt;br/&gt;
+            Use the &lt;span class="fa fa-check-circle text-success d-inline-block"&gt;&lt;/span&gt; state to mark the task as complete.
+            &lt;br/&gt;
+            Use the &lt;span class="fa fa-times-circle text-danger d-inline-block"&gt;&lt;/span&gt; state to mark the task as cancelled.
+            &lt;br/&gt;&lt;br/&gt;
+            Look for the &lt;span class="fa fa-hourglass-o d-inline-block"&gt;&lt;/span&gt; icon to see tasks waiting on other ones. Once a task is marked as complete or cancelled, all of its dependencies will be unblocked.
+            &lt;br/&gt;&lt;br/&gt;
+            Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
+            &lt;/t'</field>
+            <field name="stage_ids" eval="[
+              (0, 0, {'sequence': 1, 'name': 'New Orders', 'folded': False}),
+              (0, 0, {'sequence': 2, 'name': 'Material Sourcing', 'folded': False}),
+              (0, 0, {'sequence': 3, 'name': 'Manufacturing', 'folded': False}),
+              (0, 0, {'sequence': 4, 'name': 'Assembling', 'folded': False}),
+              (0, 0, {'sequence': 5, 'name': 'Delivered', 'folded': True})
+    ]"/>
+        </record>
+
+        <record id="project_task_kanban_example_11" model="project.task.kanban.example">
+            <field name="sequence" eval="11"/>
+            <field name="name">Podcast and Video Production</field>
+            <field name="description">
+            Prioritize your tasks by marking important ones using the &lt;a style="color: gold;" class="fa fa-star"&gt;&lt;/a&gt; button.
+            &lt;br/&gt;&lt;br/&gt;
+            Use the &lt;span class="o_status d-inline-block o_status_green"&gt;&lt;/span&gt; state to inform your colleagues that a task is approved for the next stage.
+            &lt;br/&gt;
+            Use the &lt;span class="o_status d-inline-block bg-warning"&gt;&lt;/span&gt; state to indicate a request for changes or a need for discussion on a task.
+            &lt;br/&gt;&lt;br/&gt;
+            Use the &lt;span class="fa fa-check-circle text-success d-inline-block"&gt;&lt;/span&gt; state to mark the task as complete.
+            &lt;br/&gt;
+            Use the &lt;span class="fa fa-times-circle text-danger d-inline-block"&gt;&lt;/span&gt; state to mark the task as cancelled.
+            &lt;br/&gt;&lt;br/&gt;
+            Look for the &lt;span class="fa fa-hourglass-o d-inline-block"&gt;&lt;/span&gt; icon to see tasks waiting on other ones. Once a task is marked as complete or cancelled, all of its dependencies will be unblocked.
+            &lt;br/&gt;&lt;br/&gt;
+            Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
+            &lt;/t'</field>
+            <field name="stage_ids" eval="[
+              (0, 0, {'sequence': 1, 'name': 'Research', 'folded': False}),
+              (0, 0, {'sequence': 2, 'name': 'Script', 'folded': False}),
+              (0, 0, {'sequence': 3, 'name': 'Recording', 'folded': False}),
+              (0, 0, {'sequence': 4, 'name': 'Mixing', 'folded': False}),
+              (0, 0, {'sequence': 5, 'name': 'Published', 'folded': True}),
+    ]"/>
+        </record>
+    </data>
+</odoo>

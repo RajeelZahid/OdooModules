@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_task_kanban_example,access_task_kanban_example,model_project_task_kanban_example,,1,1,1,1
+access_task_kanban_example_stage,access_task_kanban_example_stage,model_project_task_kanban_example_stage,,1,1,1,1

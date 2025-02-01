@@ -1,0 +1,53 @@
+<odoo>
+    <!-- Tree View for Task Kanban Example -->
+    <record id="view_task_kanban_example_tree" model="ir.ui.view">
+        <field name="name">project.task.kanban.example.list</field>
+        <field name="model">project.task.kanban.example</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View for Task Kanban Example -->
+    <record id="view_task_kanban_example_form" model="ir.ui.view">
+        <field name="name">project.task.kanban.example.form</field>
+        <field name="model">project.task.kanban.example</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                    <notebook>
+                        <page string="Stages">
+                            <field name="stage_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="folded"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action for Task Kanban Example -->
+    <record id="action_task_kanban_example" model="ir.actions.act_window">
+        <field name="name">Task Kanban Examples</field>
+        <field name="res_model">project.task.kanban.example</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_task_kanban_example"
+              name="Task Kanban Examples"
+              parent="project.menu_project_config"
+              action="action_task_kanban_example"
+              sequence="10"/>
+</odoo>

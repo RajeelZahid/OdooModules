@@ -7,6 +7,8 @@ from odoo.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
 
 _logger = logging.getLogger(__name__)
 LOG_APIS = ['onchange', 'constrains', 'depends', 'unlink']
+ALLOWED_MODELS = []  # Empty means All
+DISALLOWED_MODELS = []  # Empty means None
 
 
 class Model(models.AbstractModel):
@@ -14,6 +16,8 @@ class Model(models.AbstractModel):
 
     def _log_api_method_call(self, api_type, method, field_name):
         if api_type not in LOG_APIS:
+            return
+        if (ALLOWED_MODELS and self._name not in ALLOWED_MODELS) or (DISALLOWED_MODELS and self._name in DISALLOWED_MODELS):
             return
         try:
             method_name = str(method).split('.')[1].split()[0]

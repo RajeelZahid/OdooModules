@@ -1,6 +1,6 @@
 {
     "name": "API Method Triggers Logger",
-    "version": "18.0.0.1.0",
+    "version": "18.0.0.1.1",
     "category": "Tools",
     "summary": """Logs API method executions with accessible links.""",
     "description": """
@@ -9,7 +9,7 @@ It provides a streamlined way to log the causes of method executions and offers 
 This module is ideal for developers and administrators who need detailed insights into method triggers and their execution flow.""",
     "author": "Rajeel",
     "website": "https://www.linkedin.com/in/rajeelzahid/",
-    'images': ['static/description/cover.gif'],
+    'images': ['static/description/cover.png'],
     "license": "OPL-1",
     "depends": [
         'base'

@@ -11,8 +11,41 @@ ALLOWED_MODELS = []  # Empty means All
 DISALLOWED_MODELS = []  # Empty means None
 
 
+def _get_func_name(func):
+    if isinstance(func, functools.partial):
+        return str(func).split('.')[1].split()[0]
+    return func.__name__
+
+
+def _log_func_source(func):
+    file_path, line_number = inspect.getsourcefile(func), inspect.getsourcelines(func)[1]
+    _logger.info(fr'File "{file_path}", line {line_number}')
+
+
+def _handle_partial_func(method, method_name):
+    if isinstance(method, functools.partial):
+        method_name = str(method.func).split(' ')[1]
+        method = method.func
+    return method, method_name
+
+
 class Model(models.AbstractModel):
     _inherit = 'base'
+
+    def log_method_source(self, method=False, method_name=False):
+        if not method and not method_name:
+            _logger.error("No method or method name provided")
+            return
+        if method_name:
+            method = getattr(self, method_name, False)
+            if not callable(method):
+                _logger.error(f"{self._name}.{method_name}() not found")
+                return
+        if method:
+            method_name = _get_func_name(method)
+        method, method_name = _handle_partial_func(method, method_name)
+        _logger.info(f"'{method_name}' of '{self._name}'. Source below.")
+        _log_func_source(method)
 
     def _log_api_method_call(self, api_type, method, field_name):
         if api_type not in LOG_APIS:
@@ -20,7 +53,7 @@ class Model(models.AbstractModel):
         if (ALLOWED_MODELS and self._name not in ALLOWED_MODELS) or (DISALLOWED_MODELS and self._name in DISALLOWED_MODELS):
             return
         try:
-            method_name = str(method).split('.')[1].split()[0]
+            method_name = _get_func_name(method)
             if api_type == 'constrains':
                 if method_name == '_constraint_methods':
                     return
@@ -29,13 +62,9 @@ class Model(models.AbstractModel):
                     field_name = field_name[0]
                 else:
                     field_name = '(' + ', '.join(field_name) + ')'
-            if isinstance(meth := method, functools.partial):
-                # partial function can be because of change_default attr of field
-                method_name = str(meth.func).split(' ')[1]
-                meth = meth.func
+            method, method_name = _handle_partial_func(method, method_name)  # partial function can be because of change_default attr of field
             _logger.info(f"'{method_name}' was executed because of {api_type} api linked to '{self._name}.{field_name}'. Source below.")
-            file_path, line_number = inspect.getsourcefile(meth), inspect.getsourcelines(meth)[1]
-            _logger.info(fr'File "{file_path}", line {line_number}')
+            _log_func_source(method)
         except Exception as E:
             ...
 
@@ -104,4 +133,3 @@ class Model(models.AbstractModel):
         except Exception as E:
             ...
         return res
-

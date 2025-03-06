@@ -1,4 +1,5 @@
 from odoo import models, fields, api, _
+from markupsafe import Markup
 
 
 class TaskKanbanExample(models.Model):
@@ -14,13 +15,30 @@ class TaskKanbanExample(models.Model):
     def get_examples(self):
         data = []
         self = self.sudo()
+
+        def append_example(example, stages):
+            if stages:
+                example.update({
+                    'stages': stages._filter_unfold().mapped('name'),
+                    'all_stages': stages.mapped('name'),
+                    'folded_stages': stages._filter_fold().mapped('name')
+                })
+                data.append(example)
+
         examples = self.search_read([], ['name', 'description', 'stage_ids'])
         for example in examples:
             stages = self.stage_ids.browse(example['stage_ids'])
-            example['stages'] = stages._filter_unfolded().mapped('name')
-            example['all_stages'] = stages.mapped('name')
-            example['folded_stages'] = stages._filter_folded().mapped('name')
-            data.append(example)
+            append_example(example, stages)
+
+        if self.env.company.more_project_kanban_examples:
+            for project in self.env['project.project'].search([]):
+                example = {
+                    'name': '[P] ' + project.name,
+                    'description': Markup('Example picked from already created projects'),
+                    'from_database': True,
+                }
+                stages = project.type_ids
+                append_example(example, stages)
         return data
 
 
@@ -32,10 +50,10 @@ class TaskKanbanExampleStage(models.Model):
     sequence = fields.Integer()
     example_id = fields.Many2one('project.task.kanban.example', ondelete='cascade')
     name = fields.Char(required=True)
-    folded = fields.Boolean()
+    fold = fields.Boolean()
 
-    def _filter_unfolded(self):
-        return self.filtered(lambda s: not s.folded)
+    def _filter_unfold(self):
+        return self.filtered(lambda s: not s.fold)
 
-    def _filter_folded(self):
-        return self.filtered(lambda s: s.folded)
+    def _filter_fold(self):
+        return self.filtered(lambda s: s.fold)

@@ -28,7 +28,7 @@
                                 <list editable="bottom">
                                     <field name="sequence" widget="handle"/>
                                     <field name="name"/>
-                                    <field name="folded"/>
+                                    <field name="fold"/>
                                 </list>
                             </field>
                         </page>

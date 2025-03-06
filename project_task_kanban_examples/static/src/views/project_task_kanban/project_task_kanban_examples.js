@@ -24,12 +24,15 @@ async function initTaskKanbanExamples() {
         name: item.name,
         columns: item.stages,
         foldedColumns: item.folded_stages,
+        allColumns: item.all_stages,
         get description() {
-            var description = item.description + "<br><br>" +
+            var description = "<h4>" + (item.from_database ? item.name.slice(4) : item.name) + "</h4>" + "<br>" +
+                item.description + "<br>" +
+                "<br>" +
+                "<h6>Stages Breakdown</h6>" +
                 "Stages: " + item.stages.join(', ') + "<br>" +
-                "Folded: " + item.folded_stages.join(', ')
-                // + "<br><br>" +
-                // "Sequence: " + item.all_stages.join(' -> ') + "<br>"
+                "Folded: " + item.folded_stages.join(', ') + "<br>" +
+                "Sequence: " + item.all_stages.join(' -> ') + "<br>"
             return markup(description);
         },
         bullets: [greenBullet, orangeBullet, star, clock],

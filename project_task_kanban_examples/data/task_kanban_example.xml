@@ -20,11 +20,11 @@
             Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
             &lt;/t'</field>
             <field name="stage_ids" eval="[
-              (0, 0, {'sequence': 1, 'name': 'Backlog', 'folded': False}),
-              (0, 0, {'sequence': 2, 'name': 'Specifications', 'folded': False}),
-              (0, 0, {'sequence': 3, 'name': 'Development', 'folded': False}),
-              (0, 0, {'sequence': 4, 'name': 'Tests', 'folded': False}),
-              (0, 0, {'sequence': 5, 'name': 'Delivered', 'folded': True})
+              (0, 0, {'sequence': 1, 'name': 'Backlog', 'fold': False}),
+              (0, 0, {'sequence': 2, 'name': 'Specifications', 'fold': False}),
+              (0, 0, {'sequence': 3, 'name': 'Development', 'fold': False}),
+              (0, 0, {'sequence': 4, 'name': 'Tests', 'fold': False}),
+              (0, 0, {'sequence': 5, 'name': 'Delivered', 'fold': True})
     ]"/>
         </record>
 
@@ -41,11 +41,11 @@
             &lt;a class="fa fa-lightbulb-o"&gt;&lt;/a&gt; Sort your tasks by sprint using milestones, tags, or a dedicated property. At the end of each sprint, just pick the remaining tasks in your list and move them all at once to the next sprint by editing the milestone, tag, or property.
             &lt;/t'</field>
             <field name="stage_ids" eval="[
-              (0, 0, {'sequence': 1, 'name': 'Backlog', 'folded': False}),
-              (0, 0, {'sequence': 2, 'name': 'Sprint Backlog', 'folded': False}),
-              (0, 0, {'sequence': 3, 'name': 'Sprint in Progress', 'folded': False}),
-              (0, 0, {'sequence': 4, 'name': 'Sprint Complete', 'folded': True}),
-              (0, 0, {'sequence': 5, 'name': 'Old Completed Sprint', 'folded': True})
+              (0, 0, {'sequence': 1, 'name': 'Backlog', 'fold': False}),
+              (0, 0, {'sequence': 2, 'name': 'Sprint Backlog', 'fold': False}),
+              (0, 0, {'sequence': 3, 'name': 'Sprint in Progress', 'fold': False}),
+              (0, 0, {'sequence': 4, 'name': 'Sprint Complete', 'fold': True}),
+              (0, 0, {'sequence': 5, 'name': 'Old Completed Sprint', 'fold': True})
     ]"/>
         </record>
 
@@ -59,11 +59,11 @@
             Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
             &lt;/t'</field>
             <field name="stage_ids" eval="[
-              (0, 0, {'sequence': 1, 'name': 'Ideas', 'folded': False}),
-              (0, 0, {'sequence': 2, 'name': 'Researching', 'folded': False}),
-              (0, 0, {'sequence': 3, 'name': 'Writing', 'folded': False}),
-              (0, 0, {'sequence': 4, 'name': 'Editing', 'folded': False}),
-              (0, 0, {'sequence': 5, 'name': 'Done', 'folded': True})
+              (0, 0, {'sequence': 1, 'name': 'Ideas', 'fold': False}),
+              (0, 0, {'sequence': 2, 'name': 'Researching', 'fold': False}),
+              (0, 0, {'sequence': 3, 'name': 'Writing', 'fold': False}),
+              (0, 0, {'sequence': 4, 'name': 'Editing', 'fold': False}),
+              (0, 0, {'sequence': 5, 'name': 'Done', 'fold': True})
     ]"/>
         </record>
 
@@ -79,10 +79,10 @@
             Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
             &lt;/t'</field>
             <field name="stage_ids" eval="[
-              (0, 0, {'sequence': 1, 'name': 'New', 'folded': False}),
-              (0, 0, {'sequence': 2, 'name': 'In development', 'folded': False}),
-              (0, 0, {'sequence': 3, 'name': 'Done', 'folded': True}),
-              (0, 0, {'sequence': 4, 'name': 'Refused', 'folded': True})
+              (0, 0, {'sequence': 1, 'name': 'New', 'fold': False}),
+              (0, 0, {'sequence': 2, 'name': 'In development', 'fold': False}),
+              (0, 0, {'sequence': 3, 'name': 'Done', 'fold': True}),
+              (0, 0, {'sequence': 4, 'name': 'Refused', 'fold': True})
     ]"/>
         </record>
 
@@ -98,10 +98,10 @@
             Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
             &lt;/t'</field>
             <field name="stage_ids" eval="[
-              (0, 0, {'sequence': 1, 'name': 'New Projects', 'folded': False}),
-              (0, 0, {'sequence': 2, 'name': 'Resources Allocation', 'folded': False}),
-              (0, 0, {'sequence': 3, 'name': 'In Progress', 'folded': False}),
-              (0, 0, {'sequence': 4, 'name': 'Done', 'folded': True})
+              (0, 0, {'sequence': 1, 'name': 'New Projects', 'fold': False}),
+              (0, 0, {'sequence': 2, 'name': 'Resources Allocation', 'fold': False}),
+              (0, 0, {'sequence': 3, 'name': 'In Progress', 'fold': False}),
+              (0, 0, {'sequence': 4, 'name': 'Done', 'fold': True})
     ]"/>
         </record>
 
@@ -116,10 +116,10 @@
             Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
             &lt;/t'</field>
             <field name="stage_ids" eval="[
-              (0, 0, {'sequence': 1, 'name': 'Brainstorm', 'folded': False}),
-              (0, 0, {'sequence': 2, 'name': 'Research', 'folded': False}),
-              (0, 0, {'sequence': 3, 'name': 'Draft', 'folded': False}),
-              (0, 0, {'sequence': 4, 'name': 'Final Document', 'folded': True})
+              (0, 0, {'sequence': 1, 'name': 'Brainstorm', 'fold': False}),
+              (0, 0, {'sequence': 2, 'name': 'Research', 'fold': False}),
+              (0, 0, {'sequence': 3, 'name': 'Draft', 'fold': False}),
+              (0, 0, {'sequence': 4, 'name': 'Final Document', 'fold': True})
     ]"/>
         </record>
 
@@ -134,10 +134,10 @@
             Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
             &lt;/t'</field>
             <field name="stage_ids" eval="[
-              (0, 0, {'sequence': 1, 'name': 'New Orders', 'folded': False}),
-              (0, 0, {'sequence': 2, 'name': 'Logo Design', 'folded': False}),
-              (0, 0, {'sequence': 3, 'name': 'To Print', 'folded': False}),
-              (0, 0, {'sequence': 4, 'name': 'Done', 'folded': True})
+              (0, 0, {'sequence': 1, 'name': 'New Orders', 'fold': False}),
+              (0, 0, {'sequence': 2, 'name': 'Logo Design', 'fold': False}),
+              (0, 0, {'sequence': 3, 'name': 'To Print', 'fold': False}),
+              (0, 0, {'sequence': 4, 'name': 'Done', 'fold': True})
     ]"/>
         </record>
 
@@ -160,10 +160,10 @@
             Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
             &lt;/t'</field>
             <field name="stage_ids" eval="[
-              (0, 0, {'sequence': 1, 'name': 'New Request', 'folded': False}),
-              (0, 0, {'sequence': 2, 'name': 'Design', 'folded': False}),
-              (0, 0, {'sequence': 3, 'name': 'Client Review', 'folded': False}),
-              (0, 0, {'sequence': 4, 'name': 'Handoff', 'folded': True})
+              (0, 0, {'sequence': 1, 'name': 'New Request', 'fold': False}),
+              (0, 0, {'sequence': 2, 'name': 'Design', 'fold': False}),
+              (0, 0, {'sequence': 3, 'name': 'Client Review', 'fold': False}),
+              (0, 0, {'sequence': 4, 'name': 'Handoff', 'fold': True})
     ]"/>
         </record>
 
@@ -186,10 +186,10 @@
             Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
             &lt;/t'</field>
             <field name="stage_ids" eval="[
-              (0, 0, {'sequence': 1, 'name': 'Ideas', 'folded': False}),
-              (0, 0, {'sequence': 2, 'name': 'Writing', 'folded': False}),
-              (0, 0, {'sequence': 3, 'name': 'Editing', 'folded': False}),
-              (0, 0, {'sequence': 4, 'name': 'Published', 'folded': True})
+              (0, 0, {'sequence': 1, 'name': 'Ideas', 'fold': False}),
+              (0, 0, {'sequence': 2, 'name': 'Writing', 'fold': False}),
+              (0, 0, {'sequence': 3, 'name': 'Editing', 'fold': False}),
+              (0, 0, {'sequence': 4, 'name': 'Published', 'fold': True})
     ]"/>
         </record>
 
@@ -212,11 +212,11 @@
             Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
             &lt;/t'</field>
             <field name="stage_ids" eval="[
-              (0, 0, {'sequence': 1, 'name': 'New Orders', 'folded': False}),
-              (0, 0, {'sequence': 2, 'name': 'Material Sourcing', 'folded': False}),
-              (0, 0, {'sequence': 3, 'name': 'Manufacturing', 'folded': False}),
-              (0, 0, {'sequence': 4, 'name': 'Assembling', 'folded': False}),
-              (0, 0, {'sequence': 5, 'name': 'Delivered', 'folded': True})
+              (0, 0, {'sequence': 1, 'name': 'New Orders', 'fold': False}),
+              (0, 0, {'sequence': 2, 'name': 'Material Sourcing', 'fold': False}),
+              (0, 0, {'sequence': 3, 'name': 'Manufacturing', 'fold': False}),
+              (0, 0, {'sequence': 4, 'name': 'Assembling', 'fold': False}),
+              (0, 0, {'sequence': 5, 'name': 'Delivered', 'fold': True})
     ]"/>
         </record>
 
@@ -239,11 +239,11 @@
             Use the &lt;a class="fa fa-clock-o"&gt;&lt;/a&gt; icon to organize your daily activities.
             &lt;/t'</field>
             <field name="stage_ids" eval="[
-              (0, 0, {'sequence': 1, 'name': 'Research', 'folded': False}),
-              (0, 0, {'sequence': 2, 'name': 'Script', 'folded': False}),
-              (0, 0, {'sequence': 3, 'name': 'Recording', 'folded': False}),
-              (0, 0, {'sequence': 4, 'name': 'Mixing', 'folded': False}),
-              (0, 0, {'sequence': 5, 'name': 'Published', 'folded': True}),
+              (0, 0, {'sequence': 1, 'name': 'Research', 'fold': False}),
+              (0, 0, {'sequence': 2, 'name': 'Script', 'fold': False}),
+              (0, 0, {'sequence': 3, 'name': 'Recording', 'fold': False}),
+              (0, 0, {'sequence': 4, 'name': 'Mixing', 'fold': False}),
+              (0, 0, {'sequence': 5, 'name': 'Published', 'fold': True}),
     ]"/>
         </record>
     </data>

@@ -32,4 +32,5 @@ This module allows users to design their own Kanban examples tailored to their s
         ],
     },
     'license': 'LGPL-3',
+    'images': ['static/description/cover.gif'],
 }

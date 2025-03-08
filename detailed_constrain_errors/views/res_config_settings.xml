@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <record id="base_setup_res_config_settings_view_form_inherit" model="ir.ui.view">
+            <field name="name">base.setup.res.config.settings.view.form.inherit</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <block name="performance" position="after">
+                    <block title="Debugging Tools" groups="base.group_no_one" name="debugging_tools">
+                        <setting id="show_detailed_constrain_err"
+                                 help="Activate to show detail message for constraint errors">
+                            <field name="show_detailed_constrain_err"/>
+                        </setting>
+                    </block>
+                </block>
+            </field>
+        </record>
+    </data>
+</odoo>

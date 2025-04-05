@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Mode Manager</title>
+</head>
+<body>
+    <header>
+        <h1 class="text-center">Debug Mode Manager</h1>
+    </header>
+
+    <section>
+        <img style="width: 100%;" src="cover.gif" alt="Cover">
+    </section>
+
+    <section>
+        <h2>Overview</h2>
+        <p>This module provides extended capabilities for debugging management in Odoo. By introducing two new fields in
+            the Users, it enables administrators to assign specific debug preferences and empower users
+            with the ability to override debugging via URL parameters.<br/>
+            The field offers seven tailored debug options, providing granular control over user behavior. With the
+            addition of, users can now force specific debug modes through the URL parameter, giving unparalleled
+            flexibility during development or troubleshooting.</p>
+    </section>
+
+    <section>
+        <h3>Key Features</h3>
+        <ul>
+            <li>Two new fields: <code>Default Debug Mode</code> and <code>Allow Force Debug</code> on the Users.</li>
+            <li>Seven selectable debug modes tailored for various workflows.</li>
+            <li>URL-based debug forcing with <code>force_debug_mode</code> parameter.</li>
+            <li>Enhanced productivity and streamlined debugging for development teams.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Debug Mode Options</h3>
+        <ul>
+            <li>
+                <strong>Use from URL (No Force):</strong> Allows the user to toggle debug mode manually through the URL
+                parameter. No mode is enforced by default.
+            </li>
+            <li>
+                <strong>Always Debug:</strong> Permanently enables debug mode (<code>debug=1</code>) for the user,
+                making all debugging tools available at all times.
+            </li>
+            <li>
+                <strong>Assets:</strong> Activates the "debug with assets" mode, which disables minified and bundled
+                assets for easier debugging of JavaScript, CSS, and other resources.
+            </li>
+            <li>
+                <strong>Tests:</strong> Turns on "debug with tests" mode, enabling automated testing tools and advanced
+                features for development scenarios.
+            </li>
+            <li>
+                <strong>Disable-T-Cache:</strong> Disables template caching, ensuring real-time updates to views and
+                templates during testing and development.
+            </li>
+            <li>
+                <strong>Multiple:</strong> Allows multiple debug modes (e.g., <em>Assets</em> and <em>Tests</em>) to be
+                active simultaneously for flexible and comprehensive debugging.
+            </li>
+            <li>
+                <strong>Disallow Always:</strong> Restricts the user entirely from enabling any debug mode, ensuring no
+                accidental or unauthorized debugging access.
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>How to enable</h3>
+        <h6>Go to User </h6>
+        <img style="width: 100%;" src="settings.png" alt="Settings">
+    </section>
+
+    <footer>
+        <p style="text-align: center;"> Debug Mode Manager | Compatible with Odoo Community, Enterprise, and Odoo.sh</p>
+    </footer>
+</body>
+</html>

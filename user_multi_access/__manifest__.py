@@ -4,7 +4,7 @@
     "category": "Tools",
     "summary": """Multi Access Users""",
     "author": "Rajeel",
-    "website": "https://github.com/rajeelzahid",
+    "website": "https://www.linkedin.com/in/rajeelzahid/",
     "license": "OPL-1",
     "depends": [
         'base', 'web',

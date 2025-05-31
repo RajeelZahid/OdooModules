@@ -4,7 +4,7 @@
     "category": "Tools",
     "summary": """Enhancement on Smart Input for Date(time) Fields""",
     "author": "Rajeel",
-    "website": "https://github.com/rajeelzahid",
+    "website": "https://www.linkedin.com/in/rajeelzahid/",
     "license": "OPL-1",
     "depends": [
         'web',

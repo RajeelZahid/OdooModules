@@ -11,7 +11,7 @@
     </header>
 
     <section class="text-center">
-        <img style="width: 75%;" src="1.png" alt="1">
+        <img style="width: 50%;" src="1.png" alt="1">
     </section>
 
     <section
@@ -65,7 +65,24 @@
     <section>
         <h3>How to Use</h3>
         <h6>Add @install_hooks decorator in your model class and create new methods with _pre_hook_ and _post_hook_ methods</h6>
-        <img style="width: 100%;" src="1.png" alt="1">
+        <pre><code style="
+    line-height: 20px;
+">from odoo import models
+from odoo.tools import install_hooks
+
+
+@install_hooks
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+
+    def _pre_hook_name_create(self, name):
+        # do something before calling name_create
+        ...
+
+    def _post_hook_name_create(self, name):
+        # do something after calling name_create
+        ...
+</code></pre>
     </section>
 
     <section>

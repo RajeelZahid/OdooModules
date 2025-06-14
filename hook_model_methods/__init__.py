@@ -88,6 +88,7 @@ def _call_with_filtered_args(func, all_args):
 
 
 setattr(tools, 'install_hooks', install_hooks)
+setattr(models, 'install_hooks', install_hooks)
 
 
 class HookInstallerMixin(models.AbstractModel):

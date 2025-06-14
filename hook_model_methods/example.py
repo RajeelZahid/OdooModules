@@ -1,5 +1,6 @@
 from odoo import models
-from odoo.tools import install_hooks
+# from odoo.tools import install_hooks  # will be deprecated in future versions
+from odoo.models import install_hooks
 
 
 @install_hooks

@@ -18,127 +18,148 @@
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>
-
-    <t t-inherit="account.FileUploadListRenderer" t-inherit-mode="extension">
+    
+    <!--Invoice/Bill list view-->
+    <!--<t t-inherit="account.FileUploadListRenderer" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
-    </t>
+    </t>-->
 
+    <!--Sale Order/Rental/Subscription list view-->
     <!--<t t-inherit="sale.SaleListRenderer" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>-->
-
-    <t t-inherit="account.AccountMoveListRenderer" t-inherit-mode="extension">
-        <xpath expr="//span[@t-esc='column.label']" position="replace">
-            <t t-call="field_technical_name.field_label"/>
-        </xpath>
-    </t>
-
-    <t t-inherit="account.sectionAndNoteListRenderer" t-inherit-mode="extension">
-        <xpath expr="//span[@t-esc='column.label']" position="replace">
-            <t t-call="field_technical_name.field_label"/>
-        </xpath>
-    </t>
-
-        <!--<t t-inherit="hr_attendance.AttendanceListRenderer" t-inherit-mode="extension">
+    
+    <!--Journal Entry list view-->
+    <!--<t t-inherit="account.AccountMoveListRenderer" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>-->
-
+    
+    <!--Invoice/Bill/JE o2m lines view-->
+    <!--<t t-inherit="account.sectionAndNoteListRenderer" t-inherit-mode="extension">
+        <xpath expr="//span[@t-esc='column.label']" position="replace">
+            <t t-call="field_technical_name.field_label"/>
+        </xpath>
+    </t>-->
+    
+    <!--Attendance list view-->
+    <!--<t t-inherit="hr_attendance.AttendanceListRenderer" t-inherit-mode="extension">
+        <xpath expr="//span[@t-esc='column.label']" position="replace">
+            <t t-call="field_technical_name.field_label"/>
+        </xpath>
+    </t>-->
+    
+    <!--Expense list view-->
     <!--<t t-inherit="hr_expense.ListRenderer" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>-->
 
+    <!--Recruitment list view-->
     <!--<t t-inherit="hr_recruitment.RecruitmentListRenderer" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>-->
 
+    <!--Loyalty Program list view-->
     <!--<t t-inherit="loyalty.LoyaltyListRenderer" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>-->
 
+    <!--Lunch list view-->
     <!--<t t-inherit="lunch.WebListRenderer" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>-->
 
+    <!--Purchase Order list view-->
     <!--<t t-inherit="purchase.PurchaseListView" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>-->
 
+    <!--Inventory list view-->
     <!--<t t-inherit="stock.StockListRenderer" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>-->
 
+    <!--Bank Reconciliation list view-->
     <!--<t t-inherit="account.BankRecListUploadRenderer" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>-->
 
+    <!--Duplicate Transactions list view-->
     <!--<t t-inherit="account_online_synchronization.AccountDuplicateTransactionsListRenderer" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>-->
 
+    <!--Bank Statement Line list view-->
     <!--<t t-inherit="account_online_synchronization.TransientBankStatementLine" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>-->
 
+    <!--Appointment Booking list view-->
     <!--<t t-inherit="appointment.AppointmentBookingListRenderer" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>-->
 
+    <!--Appointment Type list view-->
     <!--<t t-inherit="appointment.AppointmentTypeListRenderer" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>-->
 
+    <!--Documents list view-->
     <!--<t t-inherit="documents.DocumentsListRenderer" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>-->
 
+    <!--Appraisal list view-->
     <!--<t t-inherit="hr_appraisal.AppraisalListRenderer" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>-->
 
+    <!--Payslip list view-->
     <!--<t t-inherit="hr_payroll_holidays.PayslipListRenderer" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>-->
 
+    <!--Manufacturing Employee list view-->
     <!--<t t-inherit="mrp_workorder.MrpEmployeeListRenderer" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>
         </xpath>
     </t>-->
 
+    <!--Timesheet Timer list view-->
     <!--<t t-inherit="timesheet_grid.TimesheetTimerListRenderer" t-inherit-mode="extension">
         <xpath expr="//span[@t-esc='column.label']" position="replace">
             <t t-call="field_technical_name.field_label"/>

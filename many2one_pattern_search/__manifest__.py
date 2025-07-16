@@ -7,7 +7,7 @@
     'author': 'Rajeel',
     'license': 'LGPL-3',
     'depends': ['web'],
-    'images': ['static/description/cover.gif'],
+    'images': ['static/description/cover.png'],
     'data': [
     ],
     'installable': True,

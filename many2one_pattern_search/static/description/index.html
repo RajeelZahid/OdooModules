@@ -1,0 +1,96 @@
+<header>
+    <h1 class="text-center">Field Technical Name</h1>
+</header>
+
+<section>
+    <img style="width: 100%;" src="cover.gif" alt="Cover">
+</section>
+
+<section
+            style="background-color: RGBA(113, 75, 103, 1); color: white; padding: 30px 20px; margin-top: 40px; margin-bottom: 40px; text-align: center; border-radius: 8px;">
+    <h2 style="font-size: 28px; margin-bottom: 15px; font-weight: bolder; color: inherit">📢 Available for Hire!</h2>
+    <p style="font-size: 18px; max-width: 700px; margin: auto;">
+        Looking for a skilled and reliable <b>Odoo Developer</b> to bring your business ideas to life? or to fix
+        things? or to analyze unwanted results? or to do whatever in odoo
+    </p>
+    <p style="font-size: 18px; max-width: 700px; margin: auto;">
+        Let’s build something great together! I specialize in custom module development, ERP implementation,
+        and performance tuning tailored to your needs.
+    </p>
+    <br>
+    <a href="mailto:rjlrjpt@gmail.com"
+       style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+        📬 Hire Me
+    </a>
+    <a href="https://wa.me/923482852693"
+       style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-whatsapp" style="color: #128C7E"/> wa.me/923482852693
+    </a>
+    <a href="https://www.linkedin.com/in/rajeelzahid/"
+       style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-linkedin-square" style="color: #0072b1"/> /rajeelzahid
+    </a>
+</section>
+
+<section>
+    <h3>Overview</h3>
+    <p>
+        This module enhances the search behavior of <code>many2one</code> fields in Odoo by introducing a pattern-based
+        search mechanism. Instead of relying solely on the default <code>ilike</code> search, it allows users to search
+        by meaningful fragments of the name. This is particularly helpful in cases where records (e.g. employees) share
+        common prefixes like "Muhammad", enabling quicker and more intuitive access to relevant records.
+    </p>
+</section>
+
+<section>
+    <h3>Key Features</h3>
+    <ul>
+        <li>Improves usability of <code>many2one</code> fields with large datasets</li>
+        <li>Supports pattern-based searching (e.g., "muhra" matches "Muhammad Rajeel")</li>
+        <li>Context-aware as only applies when explicitly enabled</li>
+        <li>Lightweight and non-intrusive to existing logic</li>
+        <li>Compatible with all standard and custom models</li>
+    </ul>
+</section>
+
+<section>
+    <h3>How to Use</h3>
+    <ol>
+        <li>In your form view XML, add <code>context="{'pattern_search': True}"</code> to the
+            <code>many2one</code> field definition.
+        </li>
+        <li>Example:</li>
+    </ol>
+    <pre>
+  &lt;field name="employee_id" context="{'pattern_search': True}" /&gt;
+  </pre>
+    <p>
+        Once enabled, the field will support pattern matching: typing <code>muhra</code> will match "Muhammad Rajeel",
+        and <code>rjl</code> will also return similar results even if the full name doesn't begin with it.
+    </p>
+</section>
+
+<footer>
+    <p style="text-align: center;"> Field Technical Name | Compatible with Odoo Online, Community, Enterprise and Odoo.sh</p>
+    <br/>
+    <section
+            style="background-color: RGBA(113, 75, 103, 1); color: white; padding: 30px 20px; margin-top: 40px; margin-bottom: 40px; text-align: center; border-radius: 8px;">
+        <h4 style="font-size: 28px; margin-bottom: 15px; font-weight: bolder; color: inherit">Contact Details</h4>
+        <a href="mailto:rjlrjpt@gmail.com"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            📬 Email
+        </a>
+        <a href="https://wa.me/923482852693"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-whatsapp" style="color: #128C7E"/> wa.me/923482852693
+        </a>
+        <a href="https://www.linkedin.com/in/rajeelzahid/"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-linkedin-square" style="color: #0072b1"/> /rajeelzahid
+        </a>
+        <a href="https://apps.odoo.com/apps/modules/browse?author=Rajeel"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-cubes"/> Explore Other Apps
+        </a>
+    </section>
+</footer>

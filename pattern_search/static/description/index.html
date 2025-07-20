@@ -1,13 +1,20 @@
 <header>
-    <h1 class="text-center">Many2x Autocomplete Pattern Search</h1>
+    <h1 class="text-center">Pattern Search</h1>
 </header>
 
 <section>
-    <h5>Get advance version here: <a href="https://apps.odoo.com/apps/modules/18.0/pattern_search">Pattern Search</a> (also compatible with Odoo online)</h5>
+    <h3>Autocomplete search in the form view</h3>
+    <img style="width: 100%;" src="autocomplete_form.gif" alt="autocomplete_form">
 </section>
 
 <section>
-    <img style="width: 100%;" src="cover.gif" alt="Cover">
+    <h3>Autocomplete search in the search view</h3>
+    <img style="width: 100%;" src="autocomplete_search.gif" alt="autocomplete_search">
+</section>
+
+<section>
+    <h3>Pattern search in the search view</h3>
+    <img style="width: 100%;" src="pattern_search.gif" alt="pattern_search">
 </section>
 
 <section
@@ -60,22 +67,59 @@
 <section>
     <h3>How to Use</h3>
     <ol>
-        <li>In your form view XML, add <code>context="{'pattern_search': True}"</code> to the
-            <code>many2x</code> field definition.
+        <li>
+            <h3>Autocomplete search in the form view</h3>
+            <img style="width: 100%;" src="autocomplete_form.gif" alt="autocomplete_form">
+            <p>In your form view XML, add <code>context="{'pattern_search': True}"</code> to the
+            <code>many2x</code> field definition.</p>
+            <p>Example:</p>
+            <pre>&lt;form&gt;
+    &lt;field name="employee_id" context="{'pattern_search': True}" /&gt;
+&lt;/form&gt;</pre>
+            <p>
+                Once enabled, the field will support pattern matching: typing <code>muhra</code> will match "Muhammad Rajeel",
+                and <code>rjl</code> will also return similar results even if the full name doesn't begin with it.
+            </p>
         </li>
-        <li>Example:</li>
+
+        <li>
+            <h3>Autocomplete search in the search view</h3>
+            <img style="width: 100%;" src="autocomplete_search.gif" alt="autocomplete_search">
+            <p>In your search view XML, add <code>context="{'pattern_search': True}"</code> to the field definition.</p>
+            <p>Example:</p>
+            <pre>&lt;search&gt;
+    &lt;field name="department_id" context="{'pattern_search': True}" /&gt;
+&lt;/search&gt;</pre>
+            <p>
+                Once enabled, the field will support pattern matching: typing <code>proser</code> will match "Professional Services",
+            </p>
+        </li>
+
+        <li>
+            <h3>Pattern search in the search view</h3>
+            <img style="width: 100%;" src="pattern_search.gif" alt="pattern_search">
+            <p>Same as #2</p>
+            <p>Example:</p>
+            <pre>&lt;search&gt;
+    &lt;field name="name" context="{'pattern_search': True}" /&gt;
+&lt;/search&gt;</pre>
+            <p>
+                Once enabled, the field will support pattern matching: searching <code>muhra</code> will match "Muhammad Rajeel",
+            </p>
+            <p>Use with <code>filter_domain</code>:</p>
+            <p>If using <code>filter_domain</code> in search field, use <code>raw_value</code> instead of <code>self</code> in domain</p>
+            <p>Example:</p>
+            <pre>&lt;search&gt;
+    &lt;field name="name" string="Employee" filter_domain="['|', ('work_email', 'ilike', self), ('name', 'ilike', raw_value)]" context="{'pattern_search': True}"/&gt;
+&lt;/search&gt;</pre>
+            <p><code>work_email</code> will be searched without pattern but <code>name</code> will be searched with pattern</p>
+        </li>
     </ol>
-    <pre>
-  &lt;field name="employee_id" context="{'pattern_search': True}" /&gt;
-  </pre>
-    <p>
-        Once enabled, the field will support pattern matching: typing <code>muhra</code> will match "Muhammad Rajeel",
-        and <code>rjl</code> will also return similar results even if the full name doesn't begin with it.
-    </p>
+
 </section>
 
 <footer>
-    <p style="text-align: center;"> Many2x Autocomplete | Compatible with Community, Enterprise and Odoo.sh</p>
+    <p style="text-align: center;"> Pattern Search | Compatible with Odoo Online, Community, Enterprise and Odoo.sh</p>
     <br/>
     <section
             style="background-color: RGBA(113, 75, 103, 1); color: white; padding: 30px 20px; margin-top: 40px; margin-bottom: 40px; text-align: center; border-radius: 8px;">

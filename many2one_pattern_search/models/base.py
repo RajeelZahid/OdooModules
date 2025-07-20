@@ -12,6 +12,5 @@ class Base(models.AbstractModel):
     @api.model
     def name_search(self, name='', args=None, operator='ilike', limit=100):
         if self._context.get('pattern_search'):
-            operator = '=ilike'
             name = wildcard_wrap(name)
         return super(Base, self).name_search(name=name, args=args, operator=operator, limit=limit)

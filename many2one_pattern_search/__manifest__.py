@@ -1,5 +1,5 @@
 {
-    'name': 'Search many2one records with pattern',
+    'name': 'Many2x Autocomplete Pattern Search',
     'version': '18.0.0.1.0',
     'category': 'Tools',
     'summary': 'Enables smarter many2one search using partial patterns by adding `{\'pattern_search\': True}` in the field context.',

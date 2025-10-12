@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="model_methods_finder.dialog">
+        <style>
+            .mb-half { margin-bottom: 0.5rem; }
+            .copy-btn { cursor: pointer; padding: 0 2px; }
+            .method-finder-section { margin-bottom: 1rem; }
+            .method-finder-section h5 { margin-bottom: 0.5rem; font-weight: bold; }
+            .method-selection-row {
+                display: flex;
+                align-items: center;
+                gap: 10px; /* spacing between elements */
+            }
+
+            .method-selection-row h5 {
+                flex: 0 0 auto;
+                margin: 0;
+            }
+
+            .method-selection-row SelectMenu {
+                flex: 1; /* make this take remaining space */
+            }
+
+            .method-selection-row button {
+                flex: 0 0 auto;
+                white-space: nowrap; /* prevent button text wrapping */
+            }
+        </style>
+
+        <Dialog title.translate="Model Methods Finder">
+            <div class="method-finder-section">
+                <div class="method-selection-row d-flex align-items-center gap-2">
+                    <h5 class="m-0">Select Model:</h5>
+
+                    <SelectMenu
+                        class="'flex-grow-1'"
+                        choices="props.all_models"
+                        value="state.model_name"
+                        searchable="true"
+                        searchPlaceholder="'Search models...'"
+                        onSelect="(value) => this.setSelectModelName(value)"
+                    />
+
+                    <button
+                        class="btn btn-primary"
+                        t-on-click="(event) => this.findInheritances()"
+                        t-att-disabled="!state.model_name"
+                    >
+                        Find Model Inheritances <i class="fa fa-search"/>
+                    </button>
+                </div>
+
+                <t t-if="state.all_inheritances and state.all_inheritances.length">
+                    <h6>Found Inheritances <button
+                        class="btn btn-secondary"
+                        t-on-click="(event) => this.clearInheritances()"
+                    >
+                        Clear <i class="fa fa-times"/>
+                    </button></h6>
+                    <t t-foreach="state.all_inheritances" t-as="inhr" t-key="inhr">
+                        <pre class="mb-half"><span class="text-info copy-btn" title="Open in pycharm" t-on-click="() => _onOpenInPycharm(inhr)"><img src="/methods_explorer/static/src/img/pycharm.ico" width="17" height="17"/></span><span class="text-info copy-btn" title="Open in VS Code" t-on-click="() => _onOpenInVscode(inhr)"><img src="/methods_explorer/static/src/img/vscode.ico" width="17" height="17"/></span><span class="ml8" t-esc="inhr[0]+':'+inhr[1]"/></pre>
+                    </t>
+                </t>
+            </div>
+
+            <div class="method-finder-section" t-if="state.model_name">
+                <div class="method-selection-row d-flex align-items-center gap-2">
+                    <h5 class="m-0">Select Method:</h5>
+
+                    <SelectMenu
+                        class="'flex-grow-1'"
+                        choices="state.selected_model_methods"
+                        value="state.method_name"
+                        searchable="true"
+                        searchPlaceholder="'Search methods...'"
+                        onSelect="(value) => this.setSelectMethodName(value)"
+                    />
+
+                    <button
+                        class="btn btn-primary"
+                        t-on-click="(event) => this.findImplementations()"
+                        t-att-disabled="!state.method_name"
+                    >
+                        Find Method Implementations <i class="fa fa-search"/>
+                    </button>
+                </div>
+
+                <t t-if="state.all_implementations and state.all_implementations.length">
+                    <t t-foreach="state.all_implementations" t-as="impl" t-key="impl">
+                        <pre class="mb-half" t-if="impl[1]!==0"><span class="text-info copy-btn" title="Open in pycharm" t-on-click="() => _onOpenInPycharm(impl)"><img src="/methods_explorer/static/src/img/pycharm.ico" width="17" height="17"/></span><span class="text-info copy-btn" title="Open in VS Code" t-on-click="() => _onOpenInVscode(impl)"><img src="/methods_explorer/static/src/img/vscode.ico" width="17" height="17"/></span><span class="ml8" t-esc="impl[0]+':'+impl[1]"/></pre>
+                        <pre class="mb-half" t-else=""><span class="ml8" t-esc="impl[0]"/></pre>
+                    </t>
+                </t>
+            </div>
+        </Dialog>
+    </t>
+</templates>
+

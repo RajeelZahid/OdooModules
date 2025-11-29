@@ -9,7 +9,7 @@
         and returns the message that should be displayed in the confirmation dialog.
 
         Usage:
-        * Define confirm_func="your_method_name" on the button.
+        * Define confirm_method="your_method_name" on the button.
         * Implement the method on the model to return the message you want.
         * Returning an empty string skips the dialog completely.
     """,

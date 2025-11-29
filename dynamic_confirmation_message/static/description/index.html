@@ -12,7 +12,7 @@
     <p>
         Odoo already lets you define static confirmation texts via <code>confirm="message"</code> in <code>&lt;button&gt;</code> tag.
         This module upgrades that behavior by letting you pass a Python method name directly via
-        <code>confirm_func="method_name"</code>. When the user clicks the button, the method runs,
+        <code>confirm_method="method_name"</code>. When the user clicks the button, the method runs,
         returning a message that reflects the current record state. The dialog always shows relevant
         guidance without maintaining dozens of XML variants.
     </p>
@@ -32,7 +32,7 @@
     <h2>How to configure</h2>
     <ol>
         <li>Create or reuse a button in XML.</li>
-        <li>Set <code>confirm_func="your_python_method"</code> in <code>&lt;button&gt;</code> tag to specify the method to call.</li>
+        <li>Set <code>confirm_method="your_python_method"</code> in <code>&lt;button&gt;</code> tag to specify the method to call.</li>
         <li>Implement <code>your_python_method</code> on the model. It must return
             a string representing the confirmation message. Returning an empty string skips the dialog.</li>
     </ol>

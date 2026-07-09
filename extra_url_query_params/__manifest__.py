@@ -9,11 +9,13 @@
     'author': 'Rajeel',
     'license': 'LGPL-3',
     'depends': ['web'],
+    "website": "https://www.linkedin.com/in/rajeelzahid/",
     'assets': {
         'web.assets_backend': [
             'extra_url_query_params/static/src/**/*',
         ],
     },
+    'images': ['static/description/cover.png'],
     'installable': True,
     'application': False,
     'auto_install': False,

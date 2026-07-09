@@ -1,0 +1,114 @@
+<header>
+    <h1>Extra URL Query Params</h1>
+    <p>Customize Odoo views dynamically using URL query parameters without creating duplicate XML views.</p>
+</header>
+
+<section>
+    <h2>Why this module?</h2>
+    <p>
+        Odoo views are normally defined in XML and remain static. This module allows you to
+        modify views at runtime by simply appending query parameters to the URL. You can add
+        extra fields, highlight important fields, change the default record ordering, and apply
+        row decorations without modifying the original view.
+    </p>
+</section>
+
+<section>
+    <h2>Supported query parameters</h2>
+    <ul>
+        <li>
+            <code>add_fields</code> — Comma-separated field names to add to list and form views.
+            <br/>
+            Example: <code>?add_fields=phone,mobile</code>
+        </li>
+
+        <li>
+            <code>highlight_fields</code> — Comma-separated field names to highlight in list and form views.
+            <br/>
+            Example: <code>?highlight_fields=email,phone</code>
+        </li>
+
+        <li>
+            <code>order_by</code> — Override the default ordering of list and kanban views.
+            <br/>
+            Example: <code>?order_by=create_date desc</code>
+        </li>
+
+        <li>
+            <code>decoration_*</code> — Apply conditional row decorations in list views.
+            Supports <strong>5 decorations</strong>:
+            <code>decoration_info</code>,
+            <code>decoration_muted</code>,
+            <code>decoration_success</code>,
+            <code>decoration_warning</code>,
+            and <code>decoration_danger</code>.
+            <br/>
+            Example:
+            <code>?decoration_success=state=='done'</code>
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2>Key capabilities</h2>
+    <ul>
+        <li>Add extra fields to list and form views using <code>add_fields</code>.</li>
+        <li>Highlight existing fields using <code>highlight_fields</code>.</li>
+        <li>Override the default sorting of list and kanban views using <code>order_by</code>.</li>
+        <li>Apply conditional row decorations in list views using <code>decoration_*</code>.</li>
+        <li>Validates referenced fields against the current model; unknown fields are skipped safely.</li>
+        <li>Added list columns use <code>optional="show"</code> so they behave like standard optional columns.</li>
+        <li>No effect unless the corresponding URL parameters are provided.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>How to use</h2>
+    <ol>
+        <li>Install the module.</li>
+        <li>Open any backend action.</li>
+        <li>Append one or more supported query parameters before the hash fragment.</li>
+        <li>
+            Example:
+            <code>
+                /odoo?add_fields=phone,mobile&amp;highlight_fields=email&amp;order_by=create_date desc
+            </code>
+        </li>
+    </ol>
+</section>
+
+<section>
+    <h2>Example use cases</h2>
+    <ul>
+        <li>Display additional columns for a specific dashboard or embedded iframe.</li>
+        <li>Highlight important business fields during demonstrations or troubleshooting.</li>
+        <li>Share bookmarkable URLs with custom sorting for different business workflows.</li>
+        <li>Temporarily expose audit or technical fields without changing the original XML view.</li>
+        <li>Visually emphasize records that meet business conditions using list row decorations.</li>
+    </ul>
+</section>
+
+<footer>
+    <p style="text-align: center;">Extra URL Query Params | Compatible with Community, Enterprise and Odoo.sh</p>
+    <br/>
+    <section
+            style="background-color: RGBA(113, 75, 103, 1); color: white; padding: 30px 20px; margin-top: 40px; margin-bottom: 40px; text-align: center; border-radius: 8px;">
+        <p style="font-size: 16px; max-width: 700px; margin: auto;">
+            Developed by <strong>Rajeel</strong> - A highly skilled Senior Odoo Developer with expertise in complex
+            module development, enterprise ERP implementations, advanced customization, and performance optimization.
+        </p>
+        <br>
+        <a href="mailto:rjlrjpt@gmail.com"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            Email
+        </a>
+        <a href="https://wa.me/923482852693"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-whatsapp" style="color: #128C7E"></i> wa.me/923482852693
+        </a>
+        <a href="https://www.linkedin.com/in/rajeelzahid/"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-linkedin-square" style="color: #0072b1"></i> /in/rajeelzahid
+        </a>
+    </section>
+</footer>

@@ -1,0 +1,113 @@
+<header>
+    <h1>Multi Selection Char Field</h1>
+    <p>A configurable multi-select widget for Odoo 19 Char fields. Choose between a checkbox grid or a modern badge token UI — no database schema changes required.</p>
+</header>
+
+<section>
+    <h2>Why this module?</h2>
+    <p>
+        Odoo's native char field accepts free text. This widget turns it into a structured
+        multi-select control. Selected values are stored as a single separator-separated
+        string, making it fully compatible with any existing Char field without migrations.
+    </p>
+</section>
+
+<section>
+    <h2>Designs</h2>
+
+    <h3>checkbox (default)</h3>
+    <ul>
+        <li><strong>Edit mode:</strong> responsive multi-column grid of checkboxes.</li>
+        <li><strong>Readonly mode:</strong> the same grid with all checkboxes <em>disabled</em> — users can always see all available options and which are selected.</li>
+    </ul>
+
+    <h3>badge</h3>
+    <ul>
+        <li><strong>Edit mode:</strong> selected values appear as colored badge tokens, each with a × button to deselect. A search input filters the unselected options shown below. If <code>allow_new</code> is <code>True</code>, the search input doubles as an add-new field — press Enter or click + to add a custom value.</li>
+        <li><strong>Readonly mode:</strong> only the selected badges are shown, no controls.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Options</h2>
+    <ul>
+        <li>
+            <code>values</code> — Predefined list of options.
+            <br/>Example: <code>['Engine', 'Rims', 'Spoilers', 'Flaps']</code>
+        </li>
+        <li>
+            <code>separator</code> — Character used to join/split stored values. Default: <code>','</code>.
+        </li>
+        <li>
+            <code>columns</code> — Number of columns in the checkbox grid. Default: <code>2</code>.
+        </li>
+        <li>
+            <code>design</code> — <code>'checkbox'</code> (default) or <code>'badge'</code>.
+        </li>
+        <li>
+            <code>allow_new</code> — <code>True</code> / <code>False</code>. When True, the user can type and save custom values not in the predefined list. Default: <code>False</code>.
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2>Screenshots</h2>
+    <img style="width: 100%;" src="img.png" alt="Screenshot">
+</section>
+
+<section>
+    <h2>XML usage</h2>
+    <pre><code>
+&lt;!-- Checkbox design (default) --&gt;
+&lt;field name="parts"
+       widget="multi_selection_char"
+       options="{
+           'values': ['Engine', 'Rims', 'Spoilers', 'Flaps'],
+           'columns': 2
+       }"/&gt;
+
+&lt;!-- Badge design with allow_new --&gt;
+&lt;field name="tags"
+       widget="multi_selection_char"
+       options="{
+           'values': ['Urgent', 'Review', 'Approved'],
+           'design': 'badge',
+           'allow_new': True
+       }"/&gt;
+    </code></pre>
+</section>
+
+<section>
+    <h2>Unknown value handling</h2>
+    <p>
+        If the database contains values not present in the configured <code>values</code> list
+        (e.g. from a migration or manual edit), they surface automatically at the bottom of the
+        list in warning color and are pre-selected. This prevents silent data loss when the
+        predefined list changes.
+    </p>
+</section>
+
+<footer>
+    <p style="text-align: center;">Multi Selection Char Field | Compatible with Odoo Online, Community, Enterprise and Odoo.sh</p>
+    <br/>
+    <section
+            style="background-color: RGBA(113, 75, 103, 1); color: white; padding: 30px 20px; margin-top: 40px; margin-bottom: 40px; text-align: center; border-radius: 8px;">
+        <p style="font-size: 16px; max-width: 700px; margin: auto;">
+            Developed by <strong>Rajeel</strong> - A highly skilled Senior Odoo Developer with expertise in complex
+            module development, enterprise ERP implementations, advanced customization, and performance optimization.
+        </p>
+        <br>
+        <a href="mailto:rjlrjpt@gmail.com"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            Email
+        </a>
+        <a href="https://wa.me/923482852693"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-whatsapp" style="color: #128C7E"></i> wa.me/923482852693
+        </a>
+        <a href="https://www.linkedin.com/in/rajeelzahid/"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-linkedin-square" style="color: #0072b1"></i> /in/rajeelzahid
+        </a>
+    </section>
+</footer>

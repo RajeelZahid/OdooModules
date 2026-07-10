@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="multi_selection_char_field.MultiSelectionCharField">
+
+        <!-- ═══════════════════════════════════════ CHECKBOX DESIGN -->
+        <t t-if="props.design === 'checkbox'">
+
+            <!-- READONLY: all options shown as disabled checkboxes -->
+            <t t-if="props.readonly">
+
+                <div t-att-style="'display:grid;grid-template-columns:repeat(' + props.columns + ',minmax(0,1fr));gap:8px;'">
+
+                    <t t-foreach="displayValues"
+                       t-as="item"
+                       t-key="item">
+
+                        <label class="form-check d-flex align-items-center mb-0">
+
+                            <input
+                                class="form-check-input me-2"
+                                type="checkbox"
+                                disabled="disabled"
+                                t-att-checked="isChecked(item) ? true : undefined"
+                            />
+
+                            <span t-att-class="'text-muted ' + (isUnknown(item) ? 'text-warning fw-semibold' : '')">
+                                <t t-esc="item"/>
+                            </span>
+
+                        </label>
+
+                    </t>
+
+                </div>
+
+            </t>
+
+            <!-- EDIT: interactive checkboxes with optional add-new input -->
+            <t t-else="">
+
+                <div
+                    class="o_multi_selection_char_grid"
+                    t-att-style="'display:grid;grid-template-columns:repeat(' + props.columns + ',minmax(0,1fr));gap:8px;'">
+
+                    <t t-foreach="displayValues"
+                       t-as="item"
+                       t-key="item">
+
+                        <label class="form-check d-flex align-items-center mb-0">
+
+                            <input
+                                class="form-check-input me-2"
+                                type="checkbox"
+                                t-att-checked="isChecked(item) ? true : undefined"
+                                t-on-change="(ev) => this.onChange(ev, item)"
+                            />
+
+                            <span t-att-class="isUnknown(item) ? 'text-warning fw-semibold' : ''">
+                                <t t-esc="item"/>
+                            </span>
+
+                        </label>
+
+                    </t>
+
+                </div>
+
+                <t t-if="props.allow_new">
+
+                    <div class="d-flex align-items-center gap-1 mt-2">
+
+                        <input
+                            type="text"
+                            class="o_input"
+                            style="max-width:200px;"
+                            placeholder="Add option…"
+                            t-ref="newValueInput"
+                            t-on-keydown="onAddNewKeydown"
+                        />
+
+                        <button
+                            class="btn btn-sm btn-secondary"
+                            title="Add"
+                            t-on-click="onAddNewClick">
+
+                            +
+
+                        </button>
+
+                    </div>
+
+                </t>
+
+            </t>
+
+        </t>
+
+        <!-- ═══════════════════════════════════════ BADGE DESIGN -->
+        <t t-else="">
+
+            <!-- READONLY: only selected badges, no controls -->
+            <t t-if="props.readonly">
+
+                <div class="d-flex flex-wrap gap-1">
+
+                    <t t-foreach="selectedValues"
+                       t-as="item"
+                       t-key="item">
+
+                        <span t-att-class="'badge rounded-pill ' + (isUnknown(item) ? 'text-bg-warning' : 'text-bg-primary')">
+                            <t t-esc="item"/>
+                        </span>
+
+                    </t>
+
+                </div>
+
+            </t>
+
+            <!-- EDIT: selected badges with ×, search/filter, unselected option badges -->
+            <t t-else="">
+
+                <div class="o_multi_selection_char_badge_field">
+
+                    <!-- Selected removable badges -->
+                    <div class="d-flex flex-wrap gap-1 mb-2">
+
+                        <t t-foreach="selectedValues"
+                           t-as="item"
+                           t-key="item">
+
+                            <span t-att-class="'badge rounded-pill d-inline-flex align-items-center gap-1 ' + (isUnknown(item) ? 'text-bg-warning' : 'text-bg-primary')">
+
+                                <t t-esc="item"/>
+
+                                <button
+                                    type="button"
+                                    class="btn-close btn-close-white"
+                                    style="font-size:0.6em;"
+                                    t-on-click="() => this.onRemoveBadge(item)"
+                                />
+
+                            </span>
+
+                        </t>
+
+                    </div>
+
+                    <!-- Search input + add-new button -->
+                    <div class="d-flex align-items-center gap-1 mb-2">
+
+                        <input
+                            type="text"
+                            class="o_input"
+                            style="max-width:200px;"
+                            t-att-placeholder="props.allow_new ? 'Search/Add options…' : 'Search options...'"
+                            t-att-value="state.searchQuery"
+                            t-on-input="(ev) => { this.state.searchQuery = ev.target.value; }"
+                            t-on-keydown="onBadgeSearchKeydown"
+                        />
+
+                        <button
+                            t-if="canAddNewBadge"
+                            class="btn btn-sm btn-secondary"
+                            title="Add new"
+                            t-on-click="onAddNewBadgeClick">
+
+                            +
+
+                        </button>
+
+                    </div>
+
+                    <!-- Unselected available options (filtered) -->
+                    <div class="d-flex flex-wrap gap-1">
+
+                        <t t-foreach="filteredUnselectedValues"
+                           t-as="item"
+                           t-key="item">
+
+                            <span
+                                t-att-class="'badge rounded-pill text-bg-secondary ' + (isUnknown(item) ? 'border border-warning' : '')"
+                                style="cursor:pointer;"
+                                t-on-click="() => this.onBadgeSelect(item)">
+
+                                <t t-esc="item"/>
+
+                            </span>
+
+                        </t>
+
+                    </div>
+
+                </div>
+
+            </t>
+
+        </t>
+
+    </t>
+
+</templates>

@@ -39,12 +39,10 @@ patch(viewService, {
                     "decoration_danger",
                 ].forEach((key) => {
                     const value = search.get(key);
-                    debugger;
                     if (value) {
                         context[key + '_view_ref'] = value;
                     }
                 });
-                debugger;
 
                 return superLoadViews(
                     {

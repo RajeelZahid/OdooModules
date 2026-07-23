@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_database_diff_create_form" model="ir.ui.view">
+        <field name="name">database.diff.create.form</field>
+        <field name="model">database.diff.create</field>
+        <field name="arch" type="xml">
+            <form string="Create Database Diff Report">
+                <group>
+                    <group string="Subject">
+                        <field name="use_current_env_for_subject"/>
+                        <field name="subject_db" readonly="use_current_env_for_subject" required="not use_current_env_for_subject"/>
+                        <field name="subject_url" invisible="use_current_env_for_subject" required="not use_current_env_for_subject"/>
+                        <field name="subject_username" invisible="use_current_env_for_subject" required="not use_current_env_for_subject"/>
+                        <field name="subject_password" password="True" invisible="use_current_env_for_subject" required="not use_current_env_for_subject"/>
+                    </group>
+                    <group string="Target">
+                        <field name="use_current_env_for_target"/>
+                        <field name="target_db" readonly="use_current_env_for_target" required="not use_current_env_for_target"/>
+                        <field name="target_url" invisible="use_current_env_for_target" required="not use_current_env_for_target"/>
+                        <field name="target_username" invisible="use_current_env_for_target" required="not use_current_env_for_target"/>
+                        <field name="target_password" password="True" invisible="use_current_env_for_target" required="not use_current_env_for_target"/>
+                    </group>
+                </group>
+                <group string="Compare Options">
+                    <group>
+                        <field name="compare_modules"/>
+                        <field name="compare_models"/>
+                        <field name="compare_fields"/>
+                    </group>
+                    <group>
+                        <field name="compare_menus"/>
+                        <field name="compare_views"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_create_report" type="object" string="Create Report" class="btn-primary"/>
+                    <button name="action_cancel" type="object" string="Cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

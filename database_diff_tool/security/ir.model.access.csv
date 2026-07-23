@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_database_diff_create_group,database.diff.create.user,model_database_diff_create,group_database_diff_user,1,1,1,1
+access_database_diff_group,database.diff.user,model_database_diff,group_database_diff_user,1,0,0,1
+access_database_diff_line_group,database.diff.line.user,model_database_diff_line,group_database_diff_user,1,0,0,0

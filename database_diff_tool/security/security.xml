@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="module_category_database_diff" model="ir.module.category">
+        <field name="name">Database Diff Tool</field>
+    </record>
+
+    <record id="group_database_diff_user" model="res.groups">
+        <field name="name">Database Diff User</field>
+        <field name="category_id" ref="module_category_database_diff"/>
+        <field name="comment">Members can create database diff reports and view/delete existing reports and their lines.</field>
+    </record>
+</odoo>

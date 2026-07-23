@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_database_diff_line_list" model="ir.ui.view">
+        <field name="name">database.diff.line.list</field>
+        <field name="model">database.diff.line</field>
+        <field name="arch" type="xml">
+            <list string="Database Diff Report Lines" default_order="sequence,id">
+                <field name="type"/>
+                <field name="record_name"/>
+                <field name="subject_db_record_id"/>
+                <field name="target_db_record_id"/>
+                <field name="severity" decoration-info="severity == 'info'" decoration-warning="severity == 'warning'" decoration-danger="severity == 'critical'" widget="badge"/>
+                <field name="remarks" widget="html"/>
+                <field name="remarks_plain_text" invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_database_diff_line_search" model="ir.ui.view">
+        <field name="name">database.diff.line.search</field>
+        <field name="model">database.diff.line</field>
+        <field name="arch" type="xml">
+            <search string="Search Database Diff Lines">
+                <field name="record_name"/>
+                <field name="diff_id"/>
+                <field name="remarks_plain_text"/>
+                <filter string="Modules" name="filter_type_module" domain="[('type', '=', 'module')]"/>
+                <filter string="Models" name="filter_type_model" domain="[('type', '=', 'model')]"/>
+                <filter string="Fields" name="filter_type_field" domain="[('type', '=', 'field')]"/>
+                <filter string="Menus" name="filter_type_menu" domain="[('type', '=', 'menu')]"/>
+                <filter string="Views" name="filter_type_view" domain="[('type', '=', 'view')]"/>
+                <separator/>
+                <filter string="Critical" name="filter_critical" domain="[('severity', '=', 'critical')]"/>
+                <filter string="Warning" name="filter_warning" domain="[('severity', '=', 'warning')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Type" name="groupby_type" context="{'group_by': 'type'}"/>
+                    <filter string="Severity" name="groupby_severity" context="{'group_by': 'severity'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

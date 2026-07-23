@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_database_diff_create" model="ir.actions.act_window">
+        <field name="name">Create Database Diff Report</field>
+        <field name="res_model">database.diff.create</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_database_diff_create"
+              name="Create Database Diff Report"
+              action="action_database_diff_create"
+              parent="base.next_id_9"
+              groups="group_database_diff_user"
+              sequence="100"/>
+
+    <menuitem id="menu_database_diff"
+              name="Database Diff Reports"
+              action="action_database_diff"
+              parent="base.next_id_9"
+              groups="group_database_diff_user"
+              sequence="101"/>
+</odoo>

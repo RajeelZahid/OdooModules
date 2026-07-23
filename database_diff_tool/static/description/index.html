@@ -1,0 +1,106 @@
+<header>
+    <h1>Database Diff Tool</h1>
+    <p>A developer utility for Odoo 18 that compares two databases and generates a stored, read-only report of every difference found in modules, models, fields, menus and views.</p>
+    <img style="width: 100%;" src="cover.gif" alt="Banner">
+</header>
+
+<section>
+    <h2>Why this module?</h2>
+    <p>
+        Keeping staging, production and development databases in sync is hard to verify by hand.
+        Database Diff Tool connects to a "Subject" and a "Target" database - the current one, or
+        any other reachable through XML-RPC - and produces a single report you can review,
+        share and keep for later, without ever writing to either database.
+    </p>
+</section>
+
+<section>
+    <h2>What gets compared</h2>
+    <ul>
+        <li><strong>Modules</strong> - installation state.</li>
+        <li><strong>Models</strong> - existence in each database.</li>
+        <li><strong>Fields</strong> - type, relation, and the most relevant field attributes.</li>
+        <li><strong>Menus</strong> - matched by a readable name-based path (e.g. <code>Settings/Users &amp; Companies/Users</code>), active state and sequence.</li>
+        <li><strong>Views</strong> - matched by <code>key</code> or name, active state, name and whether the architecture changed (content is never displayed).</li>
+    </ul>
+</section>
+
+<section>
+    <h2>How it works</h2>
+    <ol>
+        <li>Open <strong>Create Database Diff Report</strong> from the Technical menu.</li>
+        <li>Configure the Subject and Target databases - reuse the current environment, or supply url/credentials for a remote one.</li>
+        <li>Choose which comparisons to run.</li>
+        <li>Click <strong>Create Report</strong> - a new <strong>Database Diff Report</strong> is created with one line per difference found.</li>
+    </ol>
+</section>
+
+<section>
+    <h2>Screenshots</h2>
+
+    <p>The <strong>Create Database Diff Report</strong> and <strong>Database Diff Reports</strong> menus are found under <strong>Technical &gt; Database Structure</strong> after you add your user in this group</p>
+    <img style="width: 100%;" src="img_0.png" alt="Database Structure menu group">
+
+    <p>Open <strong>Technical &gt; Database Structure &gt; Create Database Diff Report</strong> to start a new comparison.</p>
+    <img style="width: 100%;" src="img.png" alt="Create Database Diff Report menu item">
+
+    <p>The wizard lets you enter the Subject and Target database credentials and choose which comparison types to run.</p>
+    <img style="width: 100%;" src="img_1.png" alt="Create Database Diff Report wizard">
+
+    <p>Here the current database is set as Subject and an external staging database as Target.</p>
+    <img style="width: 100%;" src="img_2.png" alt="Subject and Target database configuration">
+
+    <p>After clicking <strong>Create Report</strong>, the report is generated and you're redirected to its lines. Each line carries one of four remarks: missing in target database, missing in subject database, duplicate key, or a table of field changes between the two databases.</p>
+    <img style="width: 100%;" src="img_3.png" alt="Generated report lines with remarks">
+
+    <p>All generated reports can be reviewed from <strong>Technical &gt; Database Structure &gt; Database Diff Reports</strong>.</p>
+    <img style="width: 100%;" src="img_4.png" alt="Database Diff Reports list">
+    <img style="width: 100%;" src="img_5.png" alt="Database Diff Reports list detail">
+
+    <p>Differences can be viewed for a single comparison type or for all of them at once.</p>
+    <img style="width: 100%;" src="img_6.png" alt="Filtering differences by type">
+</section>
+
+<section>
+    <h2>Report lines</h2>
+    <p>
+        Every line records the type of object, its comparison key, a severity (Info / Warning / Critical)
+        and an HTML remark explaining exactly what changed - a difference table for changed fields, or a
+        simple notice when a record is missing on one side. Duplicate comparison keys are flagged instead
+        of silently compared.
+    </p>
+</section>
+
+<section>
+    <h2>Access control</h2>
+    <p>
+        A dedicated <strong>Database Diff User</strong> security group controls access to the wizard and
+        the generated reports. Reports are read-only but can be deleted by group members; report lines
+        cannot be deleted directly and are removed automatically when their report is deleted.
+    </p>
+</section>
+
+<footer>
+    <p style="text-align: center;">Database Diff Tool | Compatible with Odoo Online, Community, Enterprise and Odoo.sh</p>
+    <br/>
+    <section
+            style="background-color: RGBA(113, 75, 103, 1); color: white; padding: 30px 20px; margin-top: 40px; margin-bottom: 40px; text-align: center; border-radius: 8px;">
+        <p style="font-size: 16px; max-width: 700px; margin: auto;">
+            Developed by <strong>Rajeel</strong> - A highly skilled Senior Odoo Developer with expertise in complex
+            module development, enterprise ERP implementations, advanced customization, and performance optimization.
+        </p>
+        <br>
+        <a href="mailto:rjlrjpt@gmail.com"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            Email
+        </a>
+        <a href="https://wa.me/923482852693"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-whatsapp" style="color: #128C7E"></i> wa.me/923482852693
+        </a>
+        <a href="https://www.linkedin.com/in/rajeelzahid/"
+           style="display: inline-block; margin: 10px; padding: 12px 25px; background-color: white; color: RGBA(113, 75, 103, 1); font-weight: bold; text-decoration: none; border-radius: 5px; border: 2px solid white;">
+            <i class="fa fa-linkedin-square" style="color: #0072b1"></i> /in/rajeelzahid
+        </a>
+    </section>
+</footer>
